@@ -103,6 +103,15 @@ nav {
     text-align: center;
     padding: 100px 0;
     overflow: hidden; /* 유사 요소가 삐져나가지 않도록 */
+    
+    /* ▼▼▼ 배경색 추가 (라이트 모드일 때 흰색) ▼▼▼ */
+    background-color: #fff; 
+    transition: background-color 0.3s;
+}
+
+/* ▼▼▼ 다크모드 배경색 추가 (검은색) ▼▼▼ */
+body.dark-mode .hero {
+    background-color: #000;
 }
 
 /* 기존 배경 이미지와 색상 그라데이션 담당 */
@@ -113,7 +122,8 @@ nav {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), url('https://images.unsplash.com/photo-1493135637657-c24113320677?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;
+    background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), url('https://images.unsplash.com/photo-1493135637657-c24113320677?q=80&w=2070&auto=format&fit=crop') no-repeat center center;
+    background-size: cover;
     z-index: 1; /* 맨 뒤 배경 레이어 */
 }
 
