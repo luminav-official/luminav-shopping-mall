@@ -115,4 +115,35 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem('theme', 'light'); // 테마 선택 저장
         }
     });
+
+    // --- 이미지 비교 슬라이더 기능 ---
+    const slider = document.querySelector('.comparison-slider');
+    if (slider) {
+        const sliderInput = slider.querySelector('.slider-range');
+        const afterImage = slider.querySelector('.after-image');
+
+        sliderInput.addEventListener('input', (e) => {
+            afterImage.style.clipPath = `polygon(${e.target.value}% 0, 100% 0, 100% 100%, ${e.target.value}% 100%)`;
+        });
+    }
+
+    // --- 맨 위로 가기 버튼 기능 ---
+    const backToTopButton = document.querySelector('.back-to-top-btn');
+    if (backToTopButton) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+
+        backToTopButton.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
 });
