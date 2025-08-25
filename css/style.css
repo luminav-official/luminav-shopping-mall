@@ -134,7 +134,7 @@ body.dark-mode .hero {
     height: 100%;
     
     /* ▼▼▼ [수정됨] 라이트 모드 로고 경로 수정 ▼▼▼ */
-    background-image: url('../images/logo-dark.png');
+    background-image: url('../images/logo-light.png');
     background-repeat: no-repeat;
     background-position: center;
     background-size: 500px;
@@ -145,7 +145,7 @@ body.dark-mode .hero {
 
 /* ▼▼▼ [수정됨] 다크 모드 로고 경로 수정 ▼▼▼ */
 body.dark-mode .hero::after {
-    background-image: url('../images/logo-light.png');
+    background-image: url('../images/logo-dark.png');
 }
 
 .hero .container {
