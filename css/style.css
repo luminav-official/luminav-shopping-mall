@@ -718,3 +718,182 @@ body.dark-mode .portfolio-content h3 {
         height: auto;
     }
 }
+
+/* ==== 전후 비교 섹션 스타일 ==== */
+.comparison-section {
+    padding-top: 80px;
+    text-align: center;
+}
+
+.comparison-section h2 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+}
+
+.comparison-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.comparison-item {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    padding: 20px;
+    width: 45%;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.comparison-item h3 {
+    font-size: 1.5em;
+    margin-top: 0;
+    color: var(--primary-color);
+}
+
+.comparison-item img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .comparison-container {
+        flex-direction: column;
+    }
+    .comparison-item {
+        width: 100%;
+    }
+}
+
+/* ==== 리포트 테이블 스타일 ==== */
+.report-section {
+    padding-top: 80px;
+    text-align: center;
+}
+
+.report-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 40px;
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.report-table th, .report-table td {
+    padding: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.report-table thead {
+    background-color: var(--secondary-color);
+    color: var(--white-color);
+    font-weight: 700;
+}
+
+.report-table tbody tr:nth-child(even) {
+    background-color: var(--highlight-bg-color);
+}
+
+.report-table td.check {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.report-table td.cross {
+    color: #ccc;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+/* ==== 카카오톡 알림 스타일 ==== */
+.notification-section {
+    padding-top: 80px;
+    text-align: center;
+}
+
+.kakaotalk-mockup {
+    max-width: 400px;
+    margin: 40px auto 0 auto;
+    background-color: #A9C4DA;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.chat-header {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.chat-bubble {
+    background-color: #FEE500;
+    color: #3A1D1D;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: left;
+    display: inline-block;
+    max-width: 90%;
+    position: relative;
+}
+
+.chat-bubble::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent #FEE500 transparent transparent;
+}
+
+.chat-bubble p {
+    margin: 0;
+}
+
+/* ==== SNS 그리드 스타일 ==== */
+.sns-grid-section {
+    padding-top: 80px;
+    text-align: center;
+}
+
+.sns-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.sns-grid-item {
+    background-color: var(--card-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sns-grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.sns-grid-item img {
+    width: 100%;
+    display: block;
+}
+
+.grid-item-caption {
+    padding: 15px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+@media (max-width: 768px) {
+    .sns-grid {
+        grid-template-columns: 1fr;
+    }
+}
+}
