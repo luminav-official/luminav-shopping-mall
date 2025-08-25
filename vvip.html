@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VVIP 고객 관리 - 루미나브</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="/" class="logo-link"><div class="logo">루미나브 | LUMINAV</div></a>
+            <nav>
+                <div class="theme-switch-wrapper"><label class="theme-switch" for="darkmode-toggle"><input type="checkbox" id="darkmode-toggle" /><div class="slider round"></div></label></div>
+                <a href="/#services" class="nav-link">핵심 서비스</a>
+                <a href="#" class="nav-link contact-btn open-modal-btn">무료 컨설팅 신청</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-title">
+            <div class="container">
+                <h1>VVIP 고객 관리</h1>
+                <p>단골 고객 한 명이 새로운 고객 열 명보다 중요합니다. 고객을 팬으로 만드세요.</p>
+            </div>
+        </section>
+
+        <section class="service-detail">
+            <div class="container">
+                <div class="detail-content-image-left">
+                     <div class="detail-image">
+                        <img src="https://storage.googleapis.com/gemini-prod/images/5f7dd4a9-8d7d-411a-a5f1-39659b81b2a5" alt="친절한 고객 응대">
+                    </div>
+                    <div class="detail-text">
+                        <h2>"사장님처럼, 때로는 사장님보다 더 꼼꼼하게"</h2>
+                        <p>친절하고 빠른 고객 응대는 온라인 쇼핑몰의 신뢰도와 직결됩니다. 문의 하나, 리뷰 하나가 미래의 매출을 결정합니다. 루미나브의 CS 전문가가 사장님의 든든한 온라인 매니저가 되어 드립니다.</p>
+                        <ul>
+                            <li><strong>전문 CS 응대 대행:</strong> 제품 문의, 배송 문의, 교환/환불 요청 등 모든 고객 문의에 대해 사장님 가게의 매뉴얼에 맞춰 신속하고 친절하게 응대합니다.</li>
+                            <li><strong>체계적인 리뷰 관리:</strong> 긍정적인 리뷰에는 감사를 표현해 충성도를 높이고, 부정적인 리뷰에는 문제 해결을 위한 적극적인 소통으로 위기를 기회로 만듭니다.</li>
+                            <li><strong>단골 고객 관리:</strong> 구매 금액, 횟수 등을 기준으로 우수 고객을 관리하고, 특별 쿠폰 발송 등 타겟 마케팅을 통해 재구매를 유도합니다.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="container"><p>이천 사장님들의 든든한 온라인 파트너, 루미나브 드림.</p><h3>문의</h3><p><strong>전화:</strong> 010-8921-2252 </p><p><strong>홈페이지:</strong> www.icheon.luminav.kr </p><div class="copyright">&copy; 2025 Luminave. All Rights Reserved.</div></div>
+    </footer>
+    <div id="consulting-modal" class="modal"><div class="modal-content"><span class="close-btn">&times;</span><h2>무료 맞춤 컨설팅 신청</h2><p>간단한 정보를 남겨주시면, 확인 후 신속하게 연락드리겠습니다.</p><div id="modal-form-container"><form action="https://formspree.io/f/xpwjakzd" class="fs-form" method="POST"><div class="fs-field"><label class="fs-label" for="name">이름</label><input class="fs-input" id="name" name="name" required /></div><div class="fs-field"><label class="fs-label" for="store-name">매장주소 또는 상호명</label><input class="fs-input" id="store-name" name="store-name" required /></div><div class="fs-field"><label class="fs-label" for="number">연락처</label><input class="fs-input" id="number" name="number" /></div><div class="fs-field"><label class="fs-label" for="message">문의사항</label><textarea class="fs-textarea" id="message" name="message" required></textarea></div><div class="fs-button-group"><button class="fs-button" type="submit">제출</button></div></form><div id="form-status"></div>  <div class="divider">또는</div><a href="https://open.kakao.com/o/사장님오픈채팅링크" target="_blank" class="kakao-btn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 5.79 2 10.286C2 12.831 3.484 15.105 5.922 16.62L5.195 19.889C5.132 20.218 5.438 20.48 5.753 20.353L9.654 18.66C10.423 18.783 11.206 18.857 12 18.857C17.523 18.857 22 15.066 22 10.571C22 6.076 17.523 2 12 2Z" fill="#3A1D1D"/></svg>카카오톡으로 바로 연락주세요!</a></div></div></div>
+    <script src="js/script.js"></script>
+</body>
+</html>
