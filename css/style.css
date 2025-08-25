@@ -323,88 +323,56 @@ footer p {
     margin-bottom: 30px;
 }
 
-.form-group {
+/* ==== 새로운 Formspree 폼 스타일 (fs-form) ==== */
+.fs-form {
+    margin-top: 30px;
+}
+
+.fs-field {
     margin-bottom: 20px;
 }
 
-.form-group label {
+.fs-label {
     display: block;
     margin-bottom: 8px;
     font-weight: 700;
     color: #444;
 }
 
-.form-group input,
-.form-group textarea {
+.fs-input,
+.fs-textarea {
     width: 100%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
     font-family: 'Noto Sans KR', sans-serif;
-    box-sizing: border-box; /* 패딩이 너비를 늘리지 않도록 설정 */
+    box-sizing: border-box;
 }
 
-.form-group textarea {
+.fs-textarea {
     resize: vertical;
+    min-height: 100px;
 }
 
-.divider {
-    text-align: center;
-    margin: 25px 0;
-    color: #aaa;
-    font-size: 0.9em;
-    display: flex;
-    align-items: center;
+.fs-button-group {
+    margin-top: 30px;
 }
-.divider::before, .divider::after {
-    content: '';
-    flex: 1;
-    border-bottom: 1px solid #ddd;
-}
-.divider::before { margin-right: 10px; }
-.divider::after { margin-left: 10px; }
 
-/* === 버튼 크기 동일하게 맞춘 수정된 코드 === */
-.form-submit-btn,
-.kakao-btn {
-    /* ▼▼▼ 공통 스타일 ▼▼▼ */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.fs-button {
     width: 100%;
+    background-color: var(--primary-color);
+    color: white;
     padding: 15px;
+    border: none;
     border-radius: 5px;
     font-size: 1.1em;
     font-weight: 700;
-    text-decoration: none; /* a 태그의 밑줄 제거 */
     cursor: pointer;
     transition: background-color 0.3s;
-    box-sizing: border-box; /* 패딩을 포함하여 너비를 계산하도록 통일 (가장 중요!) */
+    box-sizing: border-box; /* 버튼 크기 통일을 위한 속성 */
 }
 
-.form-submit-btn {
-    /* ▼▼▼ '확인' 버튼 전용 스타일 ▼▼▼ */
-    background-color: var(--primary-color);
-    color: white;
-    border: none;
-}
-
-.form-submit-btn:hover {
+.fs-button:hover {
     background-color: #2980b9;
-}
-
-.kakao-btn {
-    /* ▼▼▼ '카카오톡' 버튼 전용 스타일 ▼▼▼ */
-    background-color: #FEE500;
-    color: #3A1D1D;
-    border: none;
-}
-
-.kakao-btn:hover {
-    background-color: #f7d800;
-}
-
-.kakao-btn svg {
-    margin-right: 10px;
 }
