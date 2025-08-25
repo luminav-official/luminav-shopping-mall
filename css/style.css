@@ -98,23 +98,21 @@ nav {
 
 /* Hero Section */
 .hero {
-    position: relative; /* 자식 요소를 정렬하기 위한 기준점 */
+    position: relative;
     color: var(--white-color);
     text-align: center;
     padding: 100px 0;
-    overflow: hidden; /* 유사 요소가 삐져나가지 않도록 */
+    overflow: hidden;
     
-    /* ▼▼▼ 배경색 추가 (라이트 모드일 때 흰색) ▼▼▼ */
+    /* ▼▼▼ [수정됨] 테마별 기본 배경색 설정 ▼▼▼ */
     background-color: #fff; 
     transition: background-color 0.3s;
 }
 
-/* ▼▼▼ 다크모드 배경색 추가 (검은색) ▼▼▼ */
 body.dark-mode .hero {
     background-color: #000;
 }
 
-/* 기존 배경 이미지와 색상 그라데이션 담당 */
 .hero::before {
     content: '';
     position: absolute;
@@ -122,12 +120,11 @@ body.dark-mode .hero {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), url('https://images.unsplash.com/photo-1493135637657-c24113320677?q=80&w=2070&auto=format&fit=crop') no-repeat center center;
+    background: linear-gradient(rgba(44, 62, 80, 0.85), rgba(44, 62, 80, 0.85)), url('https://images.unsplash.com/photo-1493135637657-c24113320677?q=80&w=2070&auto-format&fit=crop') no-repeat center center;
     background-size: cover;
-    z-index: 1; /* 맨 뒤 배경 레이어 */
+    z-index: 1;
 }
 
-/* 로고를 담당할 새로운 레이어 추가 */
 .hero::after {
     content: '';
     position: absolute;
@@ -136,26 +133,24 @@ body.dark-mode .hero {
     width: 100%;
     height: 100%;
     
-    /* 라이트 모드일 때의 로고 (밝은 로고) */
-    background-image: url('../images/logo-light.png');
+    /* ▼▼▼ [수정됨] 라이트 모드 로고 경로 수정 ▼▼▼ */
+    background-image: url('../images/logo-dark.png');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 500px; /* 로고 크기 조절 */
-
-    opacity: 0.05; /* 로고 투명도 조절 */
-    z-index: 2; /* 배경과 글자 사이의 중간 레이어 */
+    background-size: 500px;
+    opacity: 0.05;
+    z-index: 2;
     transition: background-image 0.3s;
 }
 
-/* 다크 모드일 때 로고를 어두운 것으로 교체 */
+/* ▼▼▼ [수정됨] 다크 모드 로고 경로 수정 ▼▼▼ */
 body.dark-mode .hero::after {
-    background-image: url('../images/logo-dark.png');
+    background-image: url('../images/logo-light.png');
 }
 
-/* h1, p, a 태그를 담고 있는 컨테이너 */
 .hero .container {
-    position: relative; /* 로고보다 위에 위치하도록 설정 */
-    z-index: 3; /* 맨 앞 글자 레이어 */
+    position: relative;
+    z-index: 3;
 }
 
 .hero h1 {
