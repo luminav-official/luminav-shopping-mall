@@ -199,83 +199,99 @@ body.dark-mode section h2 {
     transition: background-color 0.3s;
 }
 
-.intro p {
-    max-width: 800px;
-    margin: 0 auto 20px auto;
-    font-size: 1.1em;
+/* ==== 인터랙티브 서비스 섹션 스타일 ==== */
+.interactive-services-container {
+    position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
-.intro .highlight {
-    font-weight: 700;
-    font-size: 1.2em;
-    color: var(--primary-color);
-    background: var(--highlight-bg-color);
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 40px;
-    transition: background-color 0.3s;
-}
-
-/* Services Section */
-.service-grid {
+.sticky-wrapper {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: 350px 1fr;
+    gap: 50px;
+    position: sticky;
+    top: 80px; /* 헤더 높이 */
+    height: calc(100vh - 80px);
+    overflow: hidden; /* 내부 스크롤을 위해 */
 }
 
-.service-card {
-    background: var(--card-bg-color);
-    padding: 30px;
+.service-card-stack {
+    padding-top: 20px;
+}
+
+.service-card-grid-title h2 {
+    font-size: 2em;
+    text-align: left;
+}
+
+.service-card-grid-title p {
+    text-align: left;
+    color: var(--subtle-text-color);
+}
+
+.service-card-stack .service-card {
+    padding: 15px;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s;
-}
-body.dark-mode .service-card {
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
-}
-body.dark-mode .service-card:hover {
-    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-}
-
-.card-icon {
-    font-size: 3em;
     margin-bottom: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border: 2px solid transparent;
+    background-color: var(--card-bg-color);
+    display: flex;
+    align-items: center;
 }
 
-.service-card h3 {
-    font-size: 1.5em;
-    font-weight: 700;
-    color: var(--secondary-color);
-    transition: color 0.3s;
-}
-body.dark-mode .service-card h3 {
-    color: var(--text-color);
+.service-card-stack .service-card.active {
+    transform: translateX(10px) scale(1.03);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-color: var(--primary-color);
 }
 
-.service-card ul {
-    list-style: none;
-    padding: 0;
+.service-card-stack .service-card .card-icon {
+    font-size: 1.8em;
     margin: 0;
 }
 
-.service-card ul li {
-    padding-left: 25px;
-    position: relative;
-    margin-bottom: 10px;
-}
-
-.service-card ul li::before {
-    content: '✔';
-    color: var(--primary-color);
-    position: absolute;
-    left: 0;
+.service-card-stack .service-card h3 {
+    font-size: 1.1em;
+    margin: 0 0 0 15px;
+    color: var(--text-color);
     font-weight: 700;
 }
+
+.service-content-scroll {
+    height: calc(100vh - 80px); /* 스티키 컨테이너 높이와 맞춤 */
+    overflow-y: scroll;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.service-content-scroll::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
+
+.service-content-item {
+    min-height: calc(100vh - 120px); /* 스크롤 트리거를 위해 뷰포트 높이와 비슷하게 */
+    padding: 20px;
+    opacity: 0.3;
+    transition: opacity 0.5s ease;
+}
+
+.service-content-item.active {
+    opacity: 1;
+}
+
+.service-content-item h4 {
+    font-size: 1.8em;
+    margin-top: 0;
+}
+
+.service-content-item img {
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
 
 /* CTA Section */
 .cta {

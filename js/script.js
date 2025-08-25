@@ -146,4 +146,45 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     }
+
+    // --- 인터랙티브 서비스 섹션 스크롤 효과 ---
+    const interactiveServices = document.querySelector('#interactive-services');
+    if (interactiveServices) {
+        const serviceCards = interactiveServices.querySelectorAll('.service-card-stack .service-card');
+        const contentItems = interactiveServices.querySelectorAll('.service-content-item');
+        const contentScroll = interactiveServices.querySelector('.service-content-scroll');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const id = entry.target.getAttribute('id');
+                const correspondingCard = interactiveServices.querySelector(`.service-card[data-service-id="${id}"]`);
+
+                if (entry.isIntersecting) {
+                    // Remove active class from all cards and items
+                    serviceCards.forEach(card => card.classList.remove('active'));
+                    contentItems.forEach(item => item.classList.remove('active'));
+
+                    // Add active class to the current one
+                    if (correspondingCard) {
+                        correspondingCard.classList.add('active');
+                    }
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { root: contentScroll, threshold: 0.5 });
+
+        contentItems.forEach(item => {
+            observer.observe(item);
+        });
+
+        serviceCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const id = card.getAttribute('data-service-id');
+                const correspondingItem = interactiveServices.querySelector(`.service-content-item#${id}`);
+                if (correspondingItem) {
+                    correspondingItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            });
+        });
+    }
 });
