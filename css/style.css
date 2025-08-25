@@ -398,3 +398,46 @@ footer p {
     color: #721c24;
     border: 1px solid #f5c6cb;
 }
+
+/* ==== 카카오톡 버튼 및 구분선 스타일 추가 ==== */
+.divider {
+    text-align: center;
+    margin: 25px 0;
+    color: #aaa;
+    font-size: 0.9em;
+    display: flex;
+    align-items: center;
+}
+.divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+.divider::before { margin-right: 10px; }
+.divider::after { margin-left: 10px; }
+
+.kakao-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-sizing: border-box; /* Submit 버튼과 크기 통일 */
+    background-color: #FEE500;
+    color: #3A1D1D;
+    border: none;
+}
+
+.kakao-btn:hover {
+    background-color: #f7d800;
+}
+
+.kakao-btn svg {
+    margin-right: 10px;
+}
