@@ -147,44 +147,92 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // --- 인터랙티브 서비스 섹션 스크롤 효과 ---
-    const interactiveServices = document.querySelector('#interactive-services');
-    if (interactiveServices) {
-        const serviceCards = interactiveServices.querySelectorAll('.service-card-stack .service-card');
-        const contentItems = interactiveServices.querySelectorAll('.service-content-item');
-        const contentScroll = interactiveServices.querySelector('.service-content-scroll');
+    // --- 복합 서비스 애니메이션 스크롤 효과 ---
+    const animationContainer = document.getElementById('service-animation-container');
+    if (animationContainer) {
+        const stickyContainer = animationContainer.querySelector('.sticky-container');
+        const gridContainer = animationContainer.querySelector('.service-grid-container');
+        const cards = Array.from(gridContainer.querySelectorAll('.service-card'));
+        const contentItems = Array.from(animationContainer.querySelectorAll('.service-content-item'));
 
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                const id = entry.target.getAttribute('id');
-                const correspondingCard = interactiveServices.querySelector(`.service-card[data-service-id="${id}"]`);
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            const containerTop = animationContainer.offsetTop;
+            const containerHeight = animationContainer.offsetHeight;
+            const viewportHeight = window.innerHeight;
 
-                if (entry.isIntersecting) {
-                    // Remove active class from all cards and items
-                    serviceCards.forEach(card => card.classList.remove('active'));
-                    contentItems.forEach(item => item.classList.remove('active'));
+            if (scrollY >= containerTop && scrollY <= containerTop + containerHeight - viewportHeight) {
+                const progress = (scrollY - containerTop) / (containerHeight - viewportHeight);
+                animateServices(progress);
+            } else {
+                // Reset styles when not in view
+                cards.forEach(card => {
+                    card.style.transform = '';
+                    card.style.opacity = '1';
+                });
+                contentItems.forEach(item => item.classList.remove('active'));
+            }
+        });
 
-                    // Add active class to the current one
-                    if (correspondingCard) {
-                        correspondingCard.classList.add('active');
+        function animateServices(progress) {
+            const stackingEnd = 0.15;
+            const contentStart = 0.2;
+            const contentEnd = 0.8;
+            const unstackStart = 0.85;
+
+            if (progress < stackingEnd) {
+                // Phase 1: Stacking
+                const stackingProgress = progress / stackingEnd;
+                cards.forEach((card, i) => {
+                    const targetX = - (card.offsetLeft - 40);
+                    const targetY = - (card.offsetTop - 150) + (i * 20);
+                    const tx = targetX * stackingProgress;
+                    const ty = targetY * stackingProgress;
+                    const scale = 1 - (0.2 * stackingProgress);
+                    card.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+                });
+                contentItems.forEach(item => item.classList.remove('active'));
+
+            } else if (progress >= contentStart && progress < contentEnd) {
+                // Phase 2: Content Cycling
+                cards.forEach((card, i) => {
+                    card.style.transform = `translate(-${card.offsetLeft - 40}px, -${card.offsetTop - 150 + (i * 20)}px) scale(0.8)`;
+                });
+
+                const contentProgress = (progress - contentStart) / (contentEnd - contentStart);
+                const itemIndex = Math.floor(contentProgress * contentItems.length);
+
+                contentItems.forEach((item, i) => {
+                    if (i === itemIndex) {
+                        item.classList.add('active');
+                        cards[i].style.opacity = '1';
+                        cards[i].style.transform = `translate(-${cards[i].offsetLeft - 40}px, -${cards[i].offsetTop - 150 + (i * 20)}px) scale(0.85)`;
+                    } else {
+                        item.classList.remove('active');
+                        if(i < itemIndex) {
+                            cards[i].style.opacity = '0';
+                        }
                     }
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { root: contentScroll, threshold: 0.5 });
+                });
 
-        contentItems.forEach(item => {
-            observer.observe(item);
-        });
-
-        serviceCards.forEach(card => {
-            card.addEventListener('click', () => {
-                const id = card.getAttribute('data-service-id');
-                const correspondingItem = interactiveServices.querySelector(`.service-content-item#${id}`);
-                if (correspondingItem) {
-                    correspondingItem.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-            });
-        });
+            } else if (progress >= unstackStart) {
+                // Phase 3: Un-stacking
+                const unstackingProgress = (progress - unstackStart) / (1 - unstackStart);
+                cards.forEach((card, i) => {
+                    const targetX = - (card.offsetLeft - 40);
+                    const targetY = - (card.offsetTop - 150) + (i * 20);
+                    const tx = targetX * (1 - unstackingProgress);
+                    const ty = targetY * (1 - unstackingProgress);
+                    const scale = 0.8 + (0.2 * unstackingProgress);
+                    card.style.transform = `translate(${tx}px, ${ty}px) scale(${scale})`;
+                    card.style.opacity = '1';
+                });
+            } else {
+                 // In-between states
+                cards.forEach((card, i) => {
+                    card.style.transform = `translate(-${card.offsetLeft - 40}px, -${card.offsetTop - 150 + (i * 20)}px) scale(0.8)`;
+                });
+            }
+        }
     }
 });

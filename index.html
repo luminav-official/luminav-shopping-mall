@@ -56,86 +56,65 @@
 
         </section>
 
-        <section id="interactive-services" class="interactive-services-container">
-            <div class="sticky-wrapper">
-                <div class="service-card-stack">
-                    <div class="service-card-grid-title">
-                        <h2>핵심 서비스</h2>
-                        <p>루미나브의 원스톱 서비스를 만나보세요.</p>
-                    </div>
+        </section>
+
+        <div id="service-animation-container" style="height: 600vh;">
+            <div class="sticky-container">
+                <div class="service-grid-container">
                     <div class="service-card" data-service-id="service-1">
                         <div class="card-icon">🛒</div>
-                        <h3>쇼핑몰 제작 & 입점</h3>
+                        <h3>쇼핑몰 제작 & 입점, 한 번에 해결!</h3>
                     </div>
                     <div class="service-card" data-service-id="service-2">
                         <div class="card-icon">📸</div>
-                        <h3>상품 등록 & 사진 촬영</h3>
+                        <h3>상품 등록 & 사진 촬영? 이젠 안녕!</h3>
                     </div>
                     <div class="service-card" data-service-id="service-3">
                         <div class="card-icon">📦</div>
-                        <h3>주문, 포장, 택배 발송</h3>
+                        <h3>주문, 포장, 택배 발송... 완벽 해방!</h3>
                     </div>
                     <div class="service-card" data-service-id="service-4">
                         <div class="card-icon">📊</div>
-                        <h3>똑똑한 매장 관리</h3>
+                        <h3>똑똑한 매장 관리, 클릭 한 번으로!</h3>
                     </div>
                     <div class="service-card" data-service-id="service-5">
                         <div class="card-icon">💬</div>
-                        <h3>VVIP 고객 관리</h3>
+                        <h3>VVIP 고객 관리, 알아서 척척!</h3>
                     </div>
                     <div class="service-card" data-service-id="service-6">
                         <div class="card-icon">📱</div>
-                        <h3>SNS 계정 관리</h3>
+                        <h3>사장님은 구경만! 알아서 키워주는 가게 SNS 계정</h3>
                     </div>
                 </div>
-                <div class="service-content-scroll">
-                    <div class="service-content-item" id="service-1">
+                <div class="service-content-container">
+                    <div class="service-content-item" data-service-id="service-1">
                         <h4>쇼핑몰 제작 & 입점, 한 번에 해결!</h4>
                         <p>자체 쇼핑몰부터 쿠팡, 스마트스토어 등 주요 판매 채널까지 한 번에 입점하여 온라인 판매를 위한 가장 기본적인 단계를 해결합니다.</p>
                         <img src="//img.echosting.cafe24.com/ec/shop_kr/v2/start/design/img_theme_Luminous.jpg" alt="쇼핑몰 예시">
                     </div>
-                    <div class="service-content-item" id="service-2">
+                    <div class="service-content-item" data-service-id="service-2">
                         <h4>상품 등록 & 사진 촬영? 이젠 안녕!</h4>
                         <p>전문 포토그래퍼가 촬영한 사진과 설득력 있는 상세페이지로 고객의 시선을 사로잡고, 모든 판매 채널에 상품을 한 번에 등록해드립니다.</p>
-                        <div class="comparison-slider">
-                            <div class="slider-container">
-                                <div class="slider-image before-image"><img src="https://via.placeholder.com/600x600.png?text=Before" alt="수정 전 상품 사진"><div class="slider-label">Before</div></div>
-                                <div class="slider-image after-image"><img src="https://via.placeholder.com/600x600.png?text=After" alt="루미나브 촬영 후 사진"><div class="slider-label">After</div></div>
-                            </div>
-                            <input type="range" min="0" max="100" value="50" class="slider-range">
-                        </div>
                     </div>
-                    <div class="service-content-item" id="service-3">
+                    <div class="service-content-item" data-service-id="service-3">
                         <h4>주문, 포장, 택배 발송... 완벽 해방!</h4>
                         <p>여러 쇼핑몰의 주문을 통합 관리하고, 재고 파악부터 포장, 당일 발송까지 가장 번거로운 물류 업무를 완벽하게 해결해 드립니다.</p>
-                        <img src="https://storage.googleapis.com/gemini-prod/images/4523e100-c08a-4467-b5b9-1d227f4d458d" alt="체계적인 택배 발송 시스템">
                     </div>
-                    <div class="service-content-item" id="service-4">
+                    <div class="service-content-item" data-service-id="service-4">
                         <h4>똑똑한 매장 관리, 클릭 한 번으로!</h4>
                         <p>일일 매출, 인기 상품, 고객 데이터를 분석하여 보기 쉬운 리포트를 제공하고, 재고 부족 시 즉시 알림을 보내드립니다.</p>
-                        <div class="kakaotalk-mockup">
-                            <div class="chat-header">Luminav</div>
-                            <div class="chat-bubble"><p><strong>[재고 부족 알림]</strong></p><p>사장님, '이천 쌀빵' 재고가 5개 미만입니다. </p><p>빠른 재고 확보가 필요합니다!</p></div>
-                        </div>
                     </div>
-                    <div class="service-content-item" id="service-5">
+                    <div class="service-content-item" data-service-id="service-5">
                         <h4>VVIP 고객 관리, 알아서 척척!</h4>
                         <p>CS 전문가가 모든 고객 문의에 신속하고 친절하게 응대하고, 체계적인 리뷰 관리와 단골 고객 타겟 마케팅으로 고객을 팬으로 만듭니다.</p>
-                        <img src="https://storage.googleapis.com/gemini-prod/images/5f7dd4a9-8d7d-411a-a5f1-39659b81b2a5" alt="친절한 고객 응대">
                     </div>
-                    <div class="service-content-item" id="service-6">
+                    <div class="service-content-item" data-service-id="service-6">
                         <h4>사장님은 구경만! 알아서 키워주는 가게 SNS 계정</h4>
                         <p>가게 컨셉에 맞는 '인스타 감성' 콘텐츠를 제작하고, 소통과 이벤트를 통해 실제 구매로 이어지는 '진성 팔로워'를 확보합니다.</p>
-                        <div class="sns-grid">
-                            <div class="sns-grid-item"><img src="https://via.placeholder.com/300x300.png?text=예시+1" alt="SNS 콘텐츠 예시 1"></div>
-                            <div class="sns-grid-item"><img src="https://via.placeholder.com/300x300.png?text=예시+2" alt="SNS 콘텐츠 예시 2"></div>
-                            <div class="sns-grid-item"><img src="https://via.placeholder.com/300x300.png?text=예시+3" alt="SNS 콘텐츠 예시 3"></div>
-                            <div class="sns-grid-item"><img src="https://via.placeholder.com/300x300.png?text=예시+4" alt="SNS 콘텐츠 예시 4"></div>
-                        </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
 
         <section id="process" class="process">
             <div class="container">
