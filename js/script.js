@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const afterImage = slider.querySelector('.after-image');
 
         sliderInput.addEventListener('input', (e) => {
-            afterImage.style.clipPath = `polygon(${e.target.value}% 0, 100% 0, 100% 100%, ${e.target.value}% 100%)`;
+            
         });
     }
 
