@@ -349,23 +349,6 @@ footer p {
     resize: vertical;
 }
 
-.form-submit-btn {
-    width: 100%;
-    background-color: var(--primary-color);
-    color: white;
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.form-submit-btn:hover {
-    background-color: #2980b9;
-}
-
 .divider {
     text-align: center;
     margin: 25px 0;
@@ -382,19 +365,40 @@ footer p {
 .divider::before { margin-right: 10px; }
 .divider::after { margin-left: 10px; }
 
+/* === 버튼 크기 동일하게 맞춘 수정된 코드 === */
+.form-submit-btn,
 .kakao-btn {
+    /* ▼▼▼ 공통 스타일 ▼▼▼ */
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
     padding: 15px;
-    background-color: #FEE500;
-    color: #3A1D1D;
-    text-decoration: none;
-    font-weight: 700;
     border-radius: 5px;
     font-size: 1.1em;
+    font-weight: 700;
+    text-decoration: none; /* a 태그의 밑줄 제거 */
+    cursor: pointer;
     transition: background-color 0.3s;
+    box-sizing: border-box; /* 패딩을 포함하여 너비를 계산하도록 통일 (가장 중요!) */
+}
+
+.form-submit-btn {
+    /* ▼▼▼ '확인' 버튼 전용 스타일 ▼▼▼ */
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+}
+
+.form-submit-btn:hover {
+    background-color: #2980b9;
+}
+
+.kakao-btn {
+    /* ▼▼▼ '카카오톡' 버튼 전용 스타일 ▼▼▼ */
+    background-color: #FEE500;
+    color: #3A1D1D;
+    border: none;
 }
 
 .kakao-btn:hover {
